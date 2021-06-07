@@ -1,0 +1,86 @@
+// memmap.xmm -- Memory Map File for Main-Code
+
+// PN3032IF Specific Memory
+// 1. Registers Memory Of Specific Peripheral Device
+//      0x3f000000 ~ 0x3f00ffff
+// 2. Mirror Memory For DMA Support
+//      0x90000000 ~ 0x9fffffff     (Mirror Of 0x50000000 ~ 0x5fffffff)
+//      0xa0000000 ~ 0xafffffff     (Mirror Of 0x60000000 ~ 0x6fffffff)
+
+BEGIN device_reg
+ 0x3f000000 : io      : device_reg : 0x00010000 : device                       ;
+END   device_reg
+
+BEGIN mirror_rom
+ 0x90000000 : dataRom : mirror_rom : 0x10000000 : device, executable           ;
+END   mirror_rom
+
+BEGIN mirror_ram
+ 0xa0000000 : dataRam : mirror_ram : 0x10000000 : device, executable, writable ;
+END   mirror_ram
+
+
+
+// Xtensa-Core Configured Memory
+// 1. dram1  (fast access memory for data ram -> 330HIFI only)
+// 2. dram0  (fast access memory for data ram)
+// 3. iram0  (fast access memory for prog ram)
+// 4. system rom
+// 5. system ram
+
+BEGIN dram1
+ 0x3ffc0000 : dataRam : dram1      : 0x00020000 :                     writable ;
+  FastRAM.null                  : C : 0x3ffc0000 - 0x3ffdffff : ;
+END   dram1
+
+BEGIN dram0
+ 0x3ffe0000 : dataRam : dram0      : 0x0000c000 :                     writable ;
+  FastRAM.data                  : C : 0x3ffe0000 - 0x3ffebfff : ;
+END   dram0
+
+BEGIN iram0
+ 0x40000000 : instRam : iram0      : 0x00002000 :         executable, writable ;
+  FastRAM.prog                  : C : 0x40000000 - 0x40001fff : ;
+END   iram0
+
+
+// system_rom isn't used for user-code
+BEGIN system_rom
+ 0x50000000 : dataRom : system_rom : 0x01000000 :         executable           ;
+  ResetVector.text              : F : 0x50000000 - 0x500002ff : .ResetVector.text ;
+  SystemROM.others              : C : 0x50000300 - 0x50ffffff : ;
+END   system_rom
+
+BEGIN system_vec
+ 0x60000000 : dataRam : system_vec : 0x00000400 :         executable, writable ;
+  WindowVectors.text            : F : 0x60000000 - 0x60000177 : .WindowVectors.text ;
+  Level2InterruptVector.literal : C : 0x60000178 - 0x6000017f : .Level2InterruptVector.literal ;
+  Level2InterruptVector.text    : F : 0x60000180 - 0x600001b7 : .Level2InterruptVector.text ;
+  Level3InterruptVector.literal : C : 0x600001b8 - 0x600001bf : .Level3InterruptVector.literal ;
+  Level3InterruptVector.text    : F : 0x600001c0 - 0x600001f7 : .Level3InterruptVector.text ;
+  Level4InterruptVector.literal : C : 0x600001f8 - 0x600001ff : .Level4InterruptVector.literal ;
+  Level4InterruptVector.text    : F : 0x60000200 - 0x60000237 : .Level4InterruptVector.text ;
+  Level5InterruptVector.literal : C : 0x60000238 - 0x6000023f : .Level5InterruptVector.literal ;
+  Level5InterruptVector.text    : F : 0x60000240 - 0x60000277 : .Level5InterruptVector.text ;
+  DebugExceptionVector.literal  : C : 0x60000278 - 0x6000027f : .DebugExceptionVector.literal ;
+  DebugExceptionVector.text     : F : 0x60000280 - 0x600002b7 : .DebugExceptionVector.text ;
+  NMIExceptionVector.literal    : C : 0x600002b8 - 0x600002bf : .NMIExceptionVector.literal ;
+  NMIExceptionVector.text       : F : 0x600002c0 - 0x600002f7 : .NMIExceptionVector.text ;
+  KernelExecptionVector.literal : C : 0x600002f8 - 0x600002ff : .KernelExceptionVector.literal ;
+  KernelExceptionVector.text    : F : 0x60000300 - 0x60000337 : .KernelExceptionVector.text ;
+  UserExceptionVector.literal   : C : 0x60000338 - 0x6000033f : .UserExceptionVector.literal ;
+  UserExceptionVector.text      : F : 0x60000340 - 0x60000377 : .UserExceptionVector.text ;
+  DoubleExceptionVector.literal : C : 0x60000378 - 0x600003bf : .DoubleExceptionVector.literal ;
+  DoubleExceptionVector.text    : F : 0x600003c0 - 0x600003ff : .DoubleExceptionVector.text ;
+END   system_vec
+
+BEGIN system_ram
+ 0x60000400 : dataRam : system_ram : 0x0002fc00 :         executable, writable ;
+  VectorsLoad.text              : C : 0x60000400 - 0x600007ff : ;
+  SystemDMA.memory              : C : 0x60000800 - 0x600067ff : .dma ;
+  SystemRAM.others              : C : 0x60006800 - 0x6002ffff : STACK : HEAP : .ResetShadow.text .ResetShadow.literal .rodata .lit4 .literal .text .data .bss ;
+END   system_ram
+
+BEGIN extern_ram
+ 0x60030000 : dataRam : extern_ram : 0x01000000 :         executable, writable ;
+END   extern_ram

@@ -1,0 +1,21 @@
+**** Incremental Build [월, 7 6월 2021 16:12:49] ****
+ Project: PNXosApp
+ Configuration: HiFiEPpnpv4_prod_CS0
+ Build Target: Debug
+********************************
+C:\xtensa\XtDevTools\install\tools\RF-2016.4-win32\XtensaTools\bin\xt-xc++ -Wl,@C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/bin/HiFiEPpnpv4_prod_CS0/Debug/objfiles.list C:/xtensa/Xplorer-6.0.4-workspaces/xt_xos/bin/HiFiEPpnpv4_prod_CS0/Debug/xt_xos.a -o C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/bin/HiFiEPpnpv4_prod_CS0/Debug/PNXosApp.minsize -mlsp=C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/Lib/PaiosHdUser -Wl,-r -nostdlib -L "C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/Lib" --xtensa-system=C:/xtensa/XtDevTools/install/builds/RF-2016.4-win32/HiFiEPpnpv4_prod_CS0/config --xtensa-core=HiFiEPpnpv4_prod_CS0 --xtensa-params=
+Time taken: 489 ms
+C:\xtensa\XtDevTools\install\tools\RF-2016.4-win32\XtensaTools\bin\xt-xc++ -Wl,@C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/bin/HiFiEPpnpv4_prod_CS0/Debug/objfiles.list C:/xtensa/Xplorer-6.0.4-workspaces/xt_xos/bin/HiFiEPpnpv4_prod_CS0/Debug/xt_xos.a -o C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/bin/HiFiEPpnpv4_prod_CS0/Debug/PNXosApp -mlsp=C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/Lib/PaiosHdUser -L "C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/Lib" --xtensa-system=C:/xtensa/XtDevTools/install/builds/RF-2016.4-win32/HiFiEPpnpv4_prod_CS0/config --xtensa-core=HiFiEPpnpv4_prod_CS0 --xtensa-params=
+Time taken: 793 ms
+******* Code size summary *****
+C:\xtensa\XtDevTools\install\tools\RF-2016.4-win32\XtensaTools\bin\xt-size -C C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/bin/HiFiEPpnpv4_prod_CS0/Debug/PNXosApp
+TYPE   	   text	 rodata	   data	    bss	    dec    hex	filename
+code   	  15661	      0	      0	      0	  15661	   3d2d	C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/bin/HiFiEPpnpv4_prod_CS0/Debug/PNXosApp
+literal	    576	      0	      0	      0	    576	    240	C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/bin/HiFiEPpnpv4_prod_CS0/Debug/PNXosApp
+other  	    474	    336	   2912	   9760	  13482	   34aa	C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/bin/HiFiEPpnpv4_prod_CS0/Debug/PNXosApp
+Total  	  16711	    336	   2912	   9760	  29719	   7417	C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/bin/HiFiEPpnpv4_prod_CS0/Debug/PNXosApp
+Time taken: 235 ms
+******* ************** *****
+Build successful !!
+Total time taken: 1.933 secs
+**** Build Finished [월, 7 6월 2021 16:12:51] ****

@@ -1,0 +1,14 @@
+//  Memory map file to generate linker scripts for programs without board I/O.
+
+// $Id: xzdab3.parm,v 1.1 2007/07/18 10:54:56 bamboo Exp $
+
+// Customer ID=4869; Build=0x12a30; Copyright (c) 2004 by Tensilica Inc.  ALL RIGHTS RESERVED.
+// These coded instructions, statements, and computer programs are the
+// copyrighted works and confidential proprietary information of Tensilica Inc.
+// They may not be modified, copied, reproduced, distributed, or disclosed to
+// third parties in any manner, medium, or form, in whole or in part, without
+// the prior written consent of Tensilica Inc.
+
+//  Show more details if configuration targets the XT2000 board:
+INCLUDE_XT2000_MEMORIES = try
+

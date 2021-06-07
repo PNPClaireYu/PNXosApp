@@ -1,0 +1,15 @@
+
+<PROJECT>:=PNXosApp
+<CONFIG>:=HiFiEPpnpv4_prod_CS0
+<TARGET>:=Debug
+<FEEDBACK>:=FBmode: Off
+
+<TIE_COMPILE>:=
+<PRE_FINAL>:=
+<OBJS>:=[C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/bin/HiFiEPpnpv4_prod_CS0/Debug/main.o]
+<MINSIZE_LINK>:=-Wl,@C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/bin/HiFiEPpnpv4_prod_CS0/Debug/objfiles.list C:/xtensa/Xplorer-6.0.4-workspaces/xt_xos/bin/HiFiEPpnpv4_prod_CS0/Debug/xt_xos.a -o C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/bin/HiFiEPpnpv4_prod_CS0/Debug/PNXosApp.minsize -mlsp=C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/Lib/PaiosHdUser -Wl,-r -nostdlib -L "C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/Lib" --xtensa-system=C:/xtensa/XtDevTools/install/builds/RF-2016.4-win32/HiFiEPpnpv4_prod_CS0/config --xtensa-core=HiFiEPpnpv4_prod_CS0 --xtensa-params=
+<FINAL>:=-Wl,@C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/bin/HiFiEPpnpv4_prod_CS0/Debug/objfiles.list C:/xtensa/Xplorer-6.0.4-workspaces/xt_xos/bin/HiFiEPpnpv4_prod_CS0/Debug/xt_xos.a -o C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/bin/HiFiEPpnpv4_prod_CS0/Debug/PNXosApp -mlsp=C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/Lib/PaiosHdUser -L "C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/Lib" --xtensa-system=C:/xtensa/XtDevTools/install/builds/RF-2016.4-win32/HiFiEPpnpv4_prod_CS0/config --xtensa-core=HiFiEPpnpv4_prod_CS0 --xtensa-params=
+
+<COMPILE_START>
+main.c:=-c -g -O0 -fmessage-length=0 -I "C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/include/xos" -I "C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/include/xos" -I "C:/xtensa/Xplorer-6.0.4-workspaces/xt_xos/include" -DPROC_HiFiEPpnpv4_prod_CS0 -DCONFIG_HiFiEPpnpv4_prod_CS0 --xtensa-system=C:/xtensa/XtDevTools/install/builds/RF-2016.4-win32/HiFiEPpnpv4_prod_CS0/config --xtensa-core=HiFiEPpnpv4_prod_CS0 --xtensa-params= "C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/main.c" -o "C:/xtensa/Xplorer-6.0.4-workspaces/PNXosApp/bin/HiFiEPpnpv4_prod_CS0/Debug/main.o"
+<COMPILE_END>
